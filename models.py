@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import ARRAY
+from flask_wtf import Form
 db = SQLAlchemy()
 from tokenize import String
 
