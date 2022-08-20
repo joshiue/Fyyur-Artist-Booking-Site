@@ -9,6 +9,7 @@ from flask import Flask, render_template, request, Response, flash, redirect, ur
 from flask_migrate import Migrate
 from datetime import datetime
 from flask_moment import Moment
+from flask_wtf import Form
 from models import db, Artist, Show, Venue
 import logging
 from logging import Formatter, FileHandler
