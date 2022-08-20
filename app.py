@@ -210,22 +210,13 @@ def delete_venue(venue_id):
 @app.route('/artists')
 def artists():
   # TODO: replace with real data returned from querying the database
-  try:
-    artists = Artist.query.all()
-    upcoming = Artist.query.join(Show).filter(Show.start_time > datetime.now()).count()
-    
-    data = []
-    for artists in artists:
-      data.append({"city": artists.city,
-      "state": artists.state,
-      "artists": [{
-        "id": artists.id,
-        "name": artists.name,
-        "num_upcoming_shows": upcoming
-      }]
-      })
-  except:
-    print(sys.exc_info)
+  data=[]
+  artists = db.session.query(Artist).order_by('id').all()
+  for artist in artists:   
+      data.append({
+          "id":artist.id,
+          "name":artist.name,
+          })
   # data=[{
   #   "id": 4,
   #   "name": "Guns N Petals",
