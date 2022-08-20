@@ -1,0 +1,11 @@
+pip install virtualenv
+virtualenv env
+env\Scripts\activate.bat
+pip install flask
+pip install -U Flask-SQLAlchemy
+babel
+python-dateutil
+pip install Flask-Migrate
+pip install postgres
+pip install psycopg2
+pip install flask-wtf
